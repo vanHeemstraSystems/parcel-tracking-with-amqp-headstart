@@ -9,7 +9,7 @@ Original source: https://github.com/ardaorkin/rabbitmq-parcel-tracking
 
 ## 100 - Introduction
 
-See [README.md](./200/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - Requirements
 
