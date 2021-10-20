@@ -1,2 +1,2 @@
-# 500 - Rendering Real-time Data With WebSocket
+# 500 - Next Steps
 
