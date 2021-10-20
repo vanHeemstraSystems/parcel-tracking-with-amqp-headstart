@@ -24,6 +24,7 @@ node_modules
 /containers/app/docker-compose.prod.yml
 /containers/app/.env
 /containers/app/webui/nginx/nginx.conf
+/containers/app/webui/.npmrc
 ```
 .gitignore
 
