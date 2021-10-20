@@ -1,5 +1,3 @@
-# 100 - Server
-
 # 100 - Project Setup
 
 ## 100 - Install Create React App globally
