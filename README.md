@@ -3,6 +3,8 @@ parcel-tracking-with-amqp-headstart
 
 Based on "Parcel Tracking Application With RabbitMQ" at https://medium.com/nerd-for-tech/parcel-tracking-application-with-rabbitmq-1e022b2ff190
 
+Based on "Dockerizing a React App" at https://mherman.org/blog/dockerizing-a-react-app/
+
 Original source: https://github.com/ardaorkin/rabbitmq-parcel-tracking
 
 ## 100 - Introduction

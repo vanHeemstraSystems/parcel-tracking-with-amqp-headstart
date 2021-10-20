@@ -1,21 +1,25 @@
 # 300 - Building Development Environment
 
-## 100 - Server
+## 100 - Project Setup
 
 See [README.md](./100/README.md)
 
-## 200 - Publisher and Consumer Creation
+## X100 - Server
 
-See [README.md](./200/README.md)
+See [README.md](./X100/README.md)
 
-## 300 - Handling HTTP Requests
+## X200 - Publisher and Consumer Creation
 
-See [README.md](./300/README.md)
+See [README.md](./X200/README.md)
 
-## 400 - MongoDB Configuration
+## X300 - Handling HTTP Requests
 
-See [README.md](./400/README.md)
+See [README.md](./X300/README.md)
 
-## 500 - Rendering Real-time Data With WebSocket
+## X400 - MongoDB Configuration
 
-See [README.md](./500/README.md)
+See [README.md](./X400/README.md)
+
+## X500 - Rendering Real-time Data With WebSocket
+
+See [README.md](./X500/README.md)
