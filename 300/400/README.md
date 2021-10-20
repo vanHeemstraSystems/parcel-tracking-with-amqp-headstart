@@ -68,7 +68,7 @@ Inside the newly created subdirectory for nginx configuration, create a file cal
 
 ```
 $ cd containers/app/webui/nginx
-$ touch nginx.conf
+$ touch sample.nginx.conf
 ```
 
 Add the following content to ***sample.nginx.conf***:
