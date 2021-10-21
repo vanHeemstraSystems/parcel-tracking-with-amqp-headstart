@@ -216,3 +216,33 @@ Dockerfile.dev
 Dockerfile.prod
 ```
 containers/app/amqp/.dockerignore
+
+Now let us add the ```amqp``` service to ```sample.docker-compose.dev.yml``` by this entry:
+
+```
+...
+service:
+...
+  amqp:
+    build:
+      context: ./amqp
+      dockerfile: Dockerfile.dev
+      args: # from env_file
+        IMAGE_REPOSITORY: ${IMAGE_REPOSITORY}
+        PROXY_USER: ${PROXY_USER}
+        PROXY_PASSWORD: ${PROXY_PASSWORD}
+        PROXY_FQDN: ${PROXY_FQDN}
+        PROXY_PORT: ${PROXY_PORT}
+    env_file:
+      - .env
+    container_name: app-dev      
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./amqp:/app
+      - /app/node_modules       
+...
+
+```
+containers/app/sample.docker-compose.dev.yml
+
