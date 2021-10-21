@@ -127,7 +127,7 @@ $ npm install @babel/cli -g
 $ npm install @babel/core -g
 ```
 
-As an early trial, try to run the index.js file as to start a server with this command from within the amqp directory:
+As an early trial, try to run the server.js file as to start a server with this command from within the amqp directory:
 
 ```
 $ cd containers/app/amqp
