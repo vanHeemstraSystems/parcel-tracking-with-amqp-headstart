@@ -36,3 +36,10 @@ res.send("Welcome to parcel tracking system")
 app.listen(8000, () => console.log(`Server listening on 8000`))
 ```
 containers/app/amqp/index.js
+
+Add npm packages by the following command:
+
+```
+$ cd containers/app/amqp
+$ npm i --save express dotenv tortoise mongoose socket.io nodemon
+```
