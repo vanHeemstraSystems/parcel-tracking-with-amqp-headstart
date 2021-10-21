@@ -29,8 +29,7 @@ Add a script entry inside ```package.json``` as follows:
 ```
 containers/app/amqp/package.json
 
-
-Because by default the main file is named ```index.js```, create a file by that name in the ```amqp``` directory:
+Because by default the main file in package.json is named ```index.js```, create a file by that name in the ```amqp``` directory:
 
 ```
 $ cd containers/app/amqp
@@ -70,6 +69,23 @@ After above command, verify if the packages have been mentioned inside ```packag
 ...
 ```
 containers/app/amqp/package.json
+
+Add npm packages used for development only by the following command:
+
+```
+$ cd containers/app/amqp
+$ npm i --save-dev @babel/core @babel/preset-env babel-loader
+```
+
+After above command, verify if the packages have been mentioned inside ```package.json```:
+
+```
+...
+
+
+...
+```
+
 
 Create a file called ```Dockerfile.dev``` in the ```amqp``` directory.
 
