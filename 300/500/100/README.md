@@ -114,3 +114,20 @@ containers/app/amqp/Dockerfile.dev
 # ENV HTTPS_PROXY="http://${PROXY_USER}:${PROXY_PASSWORD}@${PROXY_FQDN}:${PROXY_PORT}"
 ```
 containers/app/amqp/Dockerfile.dev
+
+Create a file called ```.dockerignore``` inside the ```amqp``` directory.
+
+```
+$ cd containers/app/amqp
+$ touch .dockerignore 
+```
+
+Add the following content to ```.dockerignore```:
+
+```
+node_modules
+.dockerignore
+Dockerfile.dev
+Dockerfile.prod
+```
+containers/app/amqp/.dockerignore
