@@ -235,7 +235,7 @@ service:
         PROXY_PORT: ${PROXY_PORT}
     env_file:
       - .env
-    container_name: app-dev      
+    container_name: amqp-dev      
     ports:
       - "8000:8000"
     volumes:
