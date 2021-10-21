@@ -74,7 +74,7 @@ Add npm packages used for development only by the following command:
 
 ```
 $ cd containers/app/amqp
-$ npm i --save-dev @babel/core @babel/preset-env babel-loader
+$ npm i --save-dev @babel/core @babel/preset-env babel-loader babel-cli
 ```
 
 After above command, verify if the packages have been mentioned inside ```package.json```:
@@ -116,12 +116,6 @@ $ nodemon ./index --exec babel -e js
 
 ```
 $ sudo npm install nodemon -g
-```
-
-***Note**: If you see ```command not found: babel``` you have to install nodeman first, globally, as follows:
-
-```
-$ sudo npm install babel -g
 ```
 
 After above execution ..... more
