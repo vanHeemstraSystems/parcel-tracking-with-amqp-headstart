@@ -31,8 +31,8 @@ Add the following content to ```index.js```:
 import express from "express"              
 const app = express()              
 app.use("/", (req, res) => {                
-res.send("Welcome to parcel tracking system")              
-})              
+  res.send("Welcome to AMQP Service")              
+})      
 app.listen(8000, () => console.log(`Server listening on 8000`))
 ```
 containers/app/amqp/index.js
