@@ -59,3 +59,58 @@ After above command, verify if the packages have been mentioned inside ```packag
 ```
 containers/app/amqp/package.json
 
+Create a file called ```Dockerfile.dev``` in the ```amqp``` directory.
+
+```
+$ cd containers/app/amqp
+$ touch Dockerfile.dev
+```
+
+Add the following content to this Dockerfile.dev:
+
+```
+ARG IMAGE_REPOSITORY
+# pull official base image
+FROM ${IMAGE_REPOSITORY}/node:13.12.0-alpine
+
+# See https://stackoverflow.com/questions/29261811/use-docker-compose-env-variable-in-dockerbuild-file
+ARG PROXY_USER
+ARG PROXY_PASSWORD
+ARG PROXY_FQDN
+ARG PROXY_PORT
+
+ENV HTTP_PROXY="http://${PROXY_USER}:${PROXY_PASSWORD}@${PROXY_FQDN}:${PROXY_PORT}"
+ENV HTTPS_PROXY="http://${PROXY_USER}:${PROXY_PASSWORD}@${PROXY_FQDN}:${PROXY_PORT}"
+
+# set working directory
+WORKDIR /app
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install app dependencies
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+
+# add app
+COPY . ./
+
+# start app
+CMD ["npm", "start"]
+```
+containers/app/amqp/Dockerfile.dev
+
+***Note***: if you are ***not*** behind a proxy, comment out the following lines in Dockerfile.dev, like so:
+
+```
+# See https://stackoverflow.com/questions/29261811/use-docker-compose-env-variable-in-dockerbuild-file
+# ARG PROXY_USER
+# ARG PROXY_PASSWORD
+# ARG PROXY_FQDN
+# ARG PROXY_PORT
+
+# ENV HTTP_PROXY="http://${PROXY_USER}:${PROXY_PASSWORD}@${PROXY_FQDN}:${PROXY_PORT}"
+# ENV HTTPS_PROXY="http://${PROXY_USER}:${PROXY_PASSWORD}@${PROXY_FQDN}:${PROXY_PORT}"
+```
+containers/app/amqp/Dockerfile.dev
