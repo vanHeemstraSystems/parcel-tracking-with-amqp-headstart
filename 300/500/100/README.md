@@ -131,7 +131,7 @@ As an early trial, try to run the index.js file as to start a server with this c
 
 ```
 $ cd containers/app/amqp
-$ nodemon ./index --exec babel -e js
+$ nodemon ./index --exec babel-node -e js
 ```
 
 **Note**: If you see ```command not found: nodemon``` you have to install nodeman first, globally, as follows:
