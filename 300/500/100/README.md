@@ -82,9 +82,10 @@ After above command, verify if the packages have been mentioned inside ```packag
 ```
 ...
   "devDependencies": {
+    "@babel/cli": "^7.15.7",  
     "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",    
     "@babel/preset-env": "^7.15.8",
-    "babel-cli": "^6.26.0",
     "babel-loader": "^8.2.3"
   }
 ...
@@ -105,6 +106,26 @@ Add the following content to this ```.babelrc``` file:
 }
 ```
 containers/app/amqp/.babelrc
+
+Test which version of babel you are running with commmand:
+
+```
+$ babel -V
+```
+
+If it is not verion 7 or higher
+
+```
+$ npm uninstall babel-cli -g
+$ npm uninstall babel-core -g
+```
+
+And
+
+```
+$ npm install @babel/cli -g
+$ npm install @babel/core -g
+```
 
 As an early trial, try to run the index.js file as to start a server with this command from within the amqp directory:
 
