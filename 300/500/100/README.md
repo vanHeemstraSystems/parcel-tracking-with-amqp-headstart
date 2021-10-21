@@ -74,7 +74,7 @@ Add npm packages used for development only by the following command:
 
 ```
 $ cd containers/app/amqp
-$ npm i --save-dev @babel/core @babel/preset-env babel-loader babel-cli
+$ npm i --save-dev @babel/core @babel/preset-env @babel/node @babel/cli babel-loader
 ```
 
 After above command, verify if the packages have been mentioned inside ```package.json```:
