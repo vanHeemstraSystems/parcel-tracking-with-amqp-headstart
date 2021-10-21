@@ -89,6 +89,21 @@ After above command, verify if the packages have been mentioned inside ```packag
 ...
 ```
 
+Create a file called ```.babelrc``` in the ```amqp``` directory.
+
+```
+$ cd containers/app/amqp
+$ touch .babelrc
+```
+
+Add the following content to this ```.babelrc``` file:
+
+```
+{
+  "presets": ["@babel/env"]
+}
+```
+containers/app/amqp/.babelrc
 
 Create a file called ```Dockerfile.dev``` in the ```amqp``` directory.
 
@@ -97,7 +112,7 @@ $ cd containers/app/amqp
 $ touch Dockerfile.dev
 ```
 
-Add the following content to this Dockerfile.dev:
+Add the following content to this ```Dockerfile.dev``` file:
 
 ```
 ARG IMAGE_REPOSITORY
