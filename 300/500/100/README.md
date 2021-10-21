@@ -140,12 +140,9 @@ $ nodemon ./index --exec babel -e js
 $ sudo npm install nodemon -g
 ```
 
-After above execution ..... more
+After above execution open ```localhost:8000``` in a browser. If the "Welcome to AMQP Service" message comes up on the page it means Express.js installation was successful.
 
-
-
-
-
+Let's continue.
 
 Create a file called ```Dockerfile.dev``` in the ```amqp``` directory.
 
