@@ -134,7 +134,7 @@ $ cd containers/app/amqp
 $ nodemon ./index --exec babel -e js
 ```
 
-***Note**: If you see ```command not found: nodemon``` you have to install nodeman first, globally, as follows:
+**Note**: If you see ```command not found: nodemon``` you have to install nodeman first, globally, as follows:
 
 ```
 $ sudo npm install nodemon -g
