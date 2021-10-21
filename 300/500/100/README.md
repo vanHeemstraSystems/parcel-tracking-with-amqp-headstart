@@ -101,7 +101,7 @@ Add the following content to this ```.babelrc``` file:
 
 ```
 {
-  "presets": ["@babel/env"]
+  "presets": ["@babel/preset-env"]
 }
 ```
 containers/app/amqp/.babelrc
