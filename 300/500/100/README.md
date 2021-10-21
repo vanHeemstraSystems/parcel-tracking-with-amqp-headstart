@@ -23,20 +23,20 @@ Add a script entry inside ```package.json``` as follows:
 ```
 ...
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon ./server.js --exec babel-node -e js"
   }
 ...
 ```
 containers/app/amqp/package.json
 
-Because by default the main file in package.json is named ```index.js```, create a file by that name in the ```amqp``` directory:
+Create a file called ```server.js``` in the ```amqp``` directory:
 
 ```
 $ cd containers/app/amqp
-$ touch index.js
+$ touch server.js
 ```
 
-Add the following content to ```index.js```:
+Add the following content to ```server.js```:
 
 ```
 import express from "express"              
@@ -46,7 +46,7 @@ app.use("/", (req, res) => {
 })      
 app.listen(8000, () => console.log(`Server listening on 8000`))
 ```
-containers/app/amqp/index.js
+containers/app/amqp/server.js
 
 Add npm packages by the following command:
 
@@ -131,7 +131,7 @@ As an early trial, try to run the index.js file as to start a server with this c
 
 ```
 $ cd containers/app/amqp
-$ nodemon ./index --exec babel-node -e js
+$ nodemon ./server --exec babel-node -e js
 ```
 
 **Note**: If you see ```command not found: nodemon``` you have to install nodeman first, globally, as follows:
