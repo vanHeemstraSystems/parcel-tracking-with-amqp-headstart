@@ -18,6 +18,18 @@ As a result of above initialization, the following files will have been created 
 
 - package.json
 
+Add a script entry inside ```package.json``` as follows:
+
+```
+...
+  "scripts": {
+    "start": "node index.js"
+  }
+...
+```
+containers/app/amqp/package.json
+
+
 Because by default the main file is named ```index.js```, create a file by that name in the ```amqp``` directory:
 
 ```
