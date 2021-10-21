@@ -105,6 +105,20 @@ Add the following content to this ```.babelrc``` file:
 ```
 containers/app/amqp/.babelrc
 
+As an early trial, try to run the index.js file as to start a server with this command from within the amqp directory:
+
+```
+$ cd containers/app/amqp
+$ nodemon ./index --exec babel -e js
+```
+
+After above execution ..... more
+
+
+
+
+
+
 Create a file called ```Dockerfile.dev``` in the ```amqp``` directory.
 
 ```
