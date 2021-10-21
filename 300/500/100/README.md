@@ -81,8 +81,11 @@ After above command, verify if the packages have been mentioned inside ```packag
 
 ```
 ...
-
-
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.3"
+  }
 ...
 ```
 
