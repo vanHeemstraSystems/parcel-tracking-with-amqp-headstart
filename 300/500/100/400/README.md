@@ -53,22 +53,36 @@ containers/app/amqp/publishers/shippingPublisher.js
 Now, let’s write the consumer which is going to take the message which is sent to the message broker by the publisher. To do this write this code down to the ```shippingConsumer.js``` file:
 
 ```
-import Tortoise from "tortoise"                            
+import Tortoise from "tortoise";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
+import Track from "../model/Tracking";
+dotenv.config();
 
-dotenv.config()                            
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-const tortoise = new Tortoise (process.env.AMQP_URL)                            
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => console.log("Connected to database"));
 
+const tortoise = new Tortoise(process.env.AMQP_SERVER);
 tortoise
-  .queue("", { durable: false })  
-  .exchange("parcel-tracking", "topic", "*.shipping", { durable: false })  
-  .prefetch(1)  
-  .json()  
-  .subscribe((msg, ack, nack) => {    
-     console.log(msg)    
-     ack();  
-   });
+  .queue("", { durable: false })
+  .exchange("parcel-tracking", "topic", "*.shipping", { durable: false })
+  .prefetch(1)
+  .json()
+  .subscribe((msg, ack, nack) => {
+    const newParcel = new Track(msg);
+    newParcel.save((err, parcel) => {
+      if (err) throw err;
+      console.log("shipped parcel:", parcel);
+      return parcel;
+    });
+    ack();
+  });
 ```
 containers/app/amqp/consumers/shippingConsumer.js
 
