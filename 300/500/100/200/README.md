@@ -37,6 +37,9 @@ RUN npm install --silent
 # add app
 COPY . ./
 
+# expose port
+EXPOSE 8000
+
 # start app
 CMD ["npm", "start"]
 ```
@@ -102,7 +105,7 @@ service:
 ```
 containers/app/sample.docker-compose.dev.yml
 
-Now it is time to build the development Docker Image and run the development Docker Container for our app, now inluding the ```amqp``` service.
+Now it is time to build the development Docker Image and run the development Docker Container for our app, now including the ```amqp``` service.
 
 ```
 $ cd containers/app
