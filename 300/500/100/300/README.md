@@ -28,8 +28,6 @@ services:
 ```
 containers/app/sample.docker-compose.prod.yml
 
-***Notice*** the difference in port number (dev: 8000, prod: 8000) and overall size of the docker-compose files (dev: long, prod: short) between ***dev*** and ***prod***.
-
 Copy the sample.docker-compose.prod.yml:
 
 ```
