@@ -116,7 +116,7 @@ Test which version of babel you are running with commmand:
 $ babel -V
 ```
 
-If it is not verion 7 or higher
+If babel is not recognized or it is not verion 7 or higher
 
 ```
 $ npm uninstall babel-cli -g
