@@ -145,4 +145,6 @@ $ sudo npm install nodemon -g
 
 After above execution open ```localhost:8000``` in a browser. If the "Welcome to AMQP Service" message comes up on the page it means Express.js installation was successful.
 
+IMAGE OF AMQP SERVER GOES HERE WITH: Welcome to AMQP 
+
 Let's continue.
