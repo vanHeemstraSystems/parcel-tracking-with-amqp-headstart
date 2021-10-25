@@ -20,9 +20,7 @@ See [README.md](./400/README.md)
 
 See [README.md](./500/README.md)
 
-## 600 - Publisher and Consumer Creation
 
-See [README.md](./600/README.md)
 
 
 == DISCARD ALL BELOW THIS LINE FOR NOW ==
