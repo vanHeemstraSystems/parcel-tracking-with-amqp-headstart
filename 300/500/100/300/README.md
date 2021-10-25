@@ -84,4 +84,21 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 containers/app/amqp/Dockerfile.prod
 
+Here, we take advantage of the [multistage build](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) pattern to create a temporary image used for building the artifact – the production-ready React static files – that is then copied over to the production image. The temporary build image is discarded along with the original files and folders associated with the image. This produces a lean, production-ready image.
+
+NOTE: Check out the [Builder pattern vs. Multi-stage builds in Docker](https://blog.alexellis.io/mutli-stage-docker-builds/) blog post for more info on multistage builds.
+
+Using the production docker-compose file, build and tag the Docker image and run the Docker container:
+
+```
+$ cd containers/app
+$ docker-compose --file docker-compose.prod.yml up --build -d
+```
+
+If successful, browse to http://localhost:8000 to see the production version of the app.
+
+![137897955-908a2483-66c2-4ab8-a22a-a8a06ca6b325](https://user-images.githubusercontent.com/12828104/138059887-319fd743-228e-4634-9d57-8e55e9c5e5ba.png)
+
+http://localhost:8000
+
 == WE ARE HERE ==
