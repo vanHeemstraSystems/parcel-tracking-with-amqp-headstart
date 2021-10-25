@@ -25,6 +25,9 @@ services:
     container_name: amqp-prod  
     ports:
       - "8000:8000"
+    volumes:
+      - ./amqp:/app
+      - /app/node_modules
 ```
 containers/app/sample.docker-compose.prod.yml
 
