@@ -10,4 +10,4 @@ const tortoise = new Tortoise(process.env.AMQP_SERVER)
       .publish("parcel.shipping", { name: "test", status: "shipping" });
   });
 
-  export default shippingPublisher;  
+export default shippingPublisher;  
