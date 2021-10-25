@@ -119,6 +119,10 @@ http://localhost:8080
 
 Now check if we can also see the ```amqp``` server at http://localhost:8000
 
+IMAGE OF AMQP SERVER GOES HERE WITH: Welcome to AMQP Service
+
+http://localhost:8000
+
 Bring down the container before moving on:
 
 ```
