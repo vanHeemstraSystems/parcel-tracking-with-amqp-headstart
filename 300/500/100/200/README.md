@@ -118,3 +118,9 @@ If successful, you can browse to the start page of the new React App, which will
 http://localhost:8080
 
 Now check if we can also see the ```amqp``` server at http://localhost:8000
+
+Bring down the container before moving on:
+
+```
+$ docker-compose --file docker-compose.dev.yml stop
+```
