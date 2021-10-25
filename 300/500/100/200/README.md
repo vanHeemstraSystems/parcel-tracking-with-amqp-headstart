@@ -119,7 +119,7 @@ http://localhost:8080
 
 Now check if we can also see the ```amqp``` server at http://localhost:8000
 
-IMAGE OF AMQP SERVER GOES HERE WITH: Welcome to AMQP Service
+![Screenshot 2021-10-25 at 10 54 43](https://user-images.githubusercontent.com/1499433/138665819-59233cc8-65bd-489f-8a31-da4667fb11d2.png)
 
 http://localhost:8000
 
