@@ -146,7 +146,7 @@ Take note of the volumes. Without the anonymous volume ('/app/node_modules'), th
 
 Hot-reloading
 
-Test hot-relaoding by making a change to containers/app/webui/src/App.js and watch how the browser reloads to show the change automatically.
+Test hot-reloading by making a change to containers/app/webui/src/App.js and watch how the browser reloads to show the change automatically.
 
 Bring down the container before moving on:
 
