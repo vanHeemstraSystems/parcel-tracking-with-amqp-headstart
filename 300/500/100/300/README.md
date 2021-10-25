@@ -97,7 +97,7 @@ $ docker-compose --file docker-compose.prod.yml up --build -d
 
 If successful, browse to http://localhost:8000 to see the production version of the app.
 
-![137897955-908a2483-66c2-4ab8-a22a-a8a06ca6b325](https://user-images.githubusercontent.com/12828104/138059887-319fd743-228e-4634-9d57-8e55e9c5e5ba.png)
+IMAGE OF AMQP SERVER GOES HERE: "Welcome to AMQP Service".
 
 http://localhost:8000
 
