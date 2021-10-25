@@ -151,6 +151,6 @@ $ npm install @babel/node -g
 
 After above execution open ```localhost:8000``` in a browser. If the "Welcome to AMQP Service" message comes up on the page it means Express.js installation was successful.
 
-IMAGE OF AMQP SERVER GOES HERE WITH: Welcome to AMQP 
+![Screenshot 2021-10-25 at 10 54 43](https://user-images.githubusercontent.com/1499433/138665819-59233cc8-65bd-489f-8a31-da4667fb11d2.png)
 
 Let's continue.
