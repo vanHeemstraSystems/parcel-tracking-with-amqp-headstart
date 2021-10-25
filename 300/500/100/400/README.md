@@ -34,17 +34,43 @@ $ touch shippingConsumer.js
 Write this code down to the ```shippingPublisher.js``` file:
 
 ```
-import Tortoise from "tortoise"          
+import Tortoise from "tortoise";        
 import dotenv from "dotenv";
 
 dotenv.config()
 
-const tortoise = new Tortoise(process.env.AMQP_URL)    
-  tortoise      
-    .exchange("parcel-tracking", "topic", { durable: false })      
-    .publish("parcel.shipping", { name: "test", status: "shipping" });
+const tortoise = new Tortoise(process.env.AMQP_SERVER)
+  new Promise((resolve, reject) => {  
+    tortoise      
+      .exchange("parcel-tracking", "topic", { durable: false })      
+      .publish("parcel.shipping", { name: "test", status: "shipping" });
+  });
+
+export default shippingPublisher;  
 ```
 containers/app/amqp/publishers/shippingPublisher.js
+
+Now, let’s write the consumer which is going to take the message which is sent to the message broker by the publisher. To do this write this code down to the ```shippingConsumer.js``` file:
+
+```
+import Tortoise from "tortoise"                            
+import dotenv from "dotenv";
+
+dotenv.config()                            
+
+const tortoise = new Tortoise (process.env.AMQP_URL)                            
+
+tortoise
+  .queue("", { durable: false })  
+  .exchange("parcel-tracking", "topic", "*.shipping", { durable: false })  
+  .prefetch(1)  
+  .json()  
+  .subscribe((msg, ack, nack) => {    
+     console.log(msg)    
+     ack();  
+   });
+```
+containers/app/amqp/consumers/shippingConsumer.js
 
 
 == WE ARE HERE ==
