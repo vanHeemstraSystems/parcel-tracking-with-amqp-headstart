@@ -37,6 +37,7 @@ RUN npm install --silent
 # add app
 COPY . ./
 
+# expose port
 EXPOSE 8000
 
 # start app
