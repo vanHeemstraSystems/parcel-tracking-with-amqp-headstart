@@ -63,6 +63,7 @@ After above command, verify if the packages have been mentioned inside ```packag
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^6.0.11",
+    "nodemon": "^2.0.14",    
     "socket.io": "^4.3.1",
     "tortoise": "^1.0.1"
   }
