@@ -177,6 +177,43 @@ containers/app/amqp/models/Tracking.js
 
 Setup a database connection, here using ***MongoDB***.
 
+
+To configure MongoDB, let’s create an account in mongodb.com/cloud. 
+
+
+After having created an account, create an organization, a project in the organization, and a cluster in the project. 
+
+After the cluster is created, on the page of the cluster, click Database Access. 
+
+Click ADD NEW DATABASE USER choice there and create a database user. 
+
+Next, click the Cluster option on the left bar. 
+
+On the opened page, click the Connect button. 
+
+In Setup connection security step, choose **Allow anywhere** option and click Choose a connection method. 
+
+Then let’s click the Connect your application option and copy the connection information under Add your connection string into your application code. 
+
+Let’s go back to the text editor and create a variable named ```MONGODB_URL``` in the ```sample.env``` file and assign the MongoDB connection information to the variable. 
+
+```
+...
+MONGODB_URL=""
+...
+```
+containers/app/amqp/sample.env
+
+Copy the ```sample.env```:
+
+```
+$ cd containers/app/amqp
+$ cp sample.env .env
+```
+
+Change the ```.env``` file for the variable ```MONGODB_URL``` with the password just created in Database Access step and change myFirstDatabase as ```parceltracking```:
+
+
 == WE ARE HERE ==
 
 
