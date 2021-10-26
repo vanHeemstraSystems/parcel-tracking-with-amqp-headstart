@@ -109,9 +109,32 @@ https://api.cloudamqp.com/console/4307ae60-fb8b-4497-8935-44d858dd94e1/details
 Copy the value of AMQP URL in the Details section of above web page. 
 
 ```
-AMQP URL = amqps://<user & vhost>:<password>@rat.rmq2.cloudamqp.com/<username>
+AMQP_URL="amqps://<user & vhost>:<password>@rat.rmq2.cloudamqp.com/<username>"
 ```
 ***Note***: ```<user & vhost>``` and ```<password>``` needs to be replaced by the user & vhost and password as provided on the web page in CloudAMQP shown previously.
 
+After applying these steps, go back to the ```amqp``` folder and create a file named sample.env. 
 
+```
+$ cd containers/app/amqp
+$ touch sample.env
+```
+Add the following content to this file:
+
+```
+AMQP_URL="<copied_amqp_url>"
+```
+Now make a copy of ```sample.env```:
+
+```
+$ cd containers/app/amqp
+$ cp sample.env .env
+```
+
+Write these lines down in this ```.env``` file:
+
+AMQP_URL="amqps://<user & vhost>:<password>@rat.rmq2.cloudamqp.com/<username>"
+
+***Note***: ```<user & vhost>``` and ```<password>``` needs to be replaced by the user & vhost and password as provided on the web page in CloudAMQP shown previously.
+  
 == WE ARE HERE ==
