@@ -182,7 +182,7 @@ containers/app/amqp/models/Tracking.js
 Setup a database connection, here using ***MongoDB***.
 
 
-To configure MongoDB, let’s create an account in mongodb.com/cloud. 
+To configure MongoDB, let’s create an account in [mongodb.com/cloud](mongodb.com/cloud). 
 
 
 After having created an account, create an organization, a project in the organization, and a cluster in the project. 
