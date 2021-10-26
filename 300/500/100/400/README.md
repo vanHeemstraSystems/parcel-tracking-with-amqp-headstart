@@ -92,9 +92,11 @@ After you have created and account on CloudAMQP, click on the button Create New 
 
 For a free plan, choose the Little Lemur option. 
 
+![Screenshot 2021-10-25 171902](https://user-images.githubusercontent.com/12828104/138869551-5da6039f-9a34-48d1-9d9d-b6f2128766a8.png)
+
 Then press the buttons named Select Region (e.g. Amazon Web Services EU-West-3 (Paris)) > Review > Create Instance respectively. 
 
-IMAGE OF CLOUDAMQP HERE
+![Screenshot 2021-10-26 133109](https://user-images.githubusercontent.com/12828104/138869683-75013b61-dc2d-41ac-8677-909b2f57b5a2.png)
 
 https://customer.cloudamqp.com/instance/
 
