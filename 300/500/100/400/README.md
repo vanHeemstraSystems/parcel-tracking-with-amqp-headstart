@@ -122,7 +122,7 @@ $ touch sample.env
 Add the following content to this file:
 
 ```
-AMQP_URL="<copied_amqp_url>"
+AMQP_URL="amqps://<username>:<password>@<server>/..."
 ```
 Now make a copy of ```sample.env```:
 
