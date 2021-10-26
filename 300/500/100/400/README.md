@@ -100,5 +100,12 @@ Then press the buttons named Select Region (e.g. Amazon Web Services EU-West-3 (
 
 https://customer.cloudamqp.com/instance/
 
+![Screenshot 2021-10-26 133555](https://user-images.githubusercontent.com/12828104/138869981-ab93fde5-9925-4dfe-bb4f-96f4bccbcffd.png)
+
+https://api.cloudamqp.com/console/4307ae60-fb8b-4497-8935-44d858dd94e1/details
+
+
+
+
 
 == WE ARE HERE ==
