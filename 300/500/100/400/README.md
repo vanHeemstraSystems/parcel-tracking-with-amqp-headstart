@@ -86,6 +86,8 @@ tortoise
 ```
 containers/app/amqp/consumers/shippingConsumer.js
 
+## Configure RabbitMQ
+
 We can prefer to install RabbitMQ on our local machine but in that case, the installation steps would be different from the operating system to the operating system and we would need to mess with some network settings. Therefore, we make this step with [cloudamqp.com](http://cloudamqp.com/). To do that let’s create an account on [cloudamqp.com](http://cloudamqp.com/). 
 
 After you have created and account on CloudAMQP, click on the button Create New Instance and create a new message broker instance. We can name the instance as we wish (here: **Parcel Tracking**). 
@@ -174,6 +176,8 @@ const Track = mongoose.model("Track", trackingSchema);
 export default Track;
 ```
 containers/app/amqp/models/Tracking.js
+
+## Configure MongoDB
 
 Setup a database connection, here using ***MongoDB***.
 
