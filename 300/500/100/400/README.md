@@ -141,5 +141,32 @@ AMQP_URL="amqps://<user & vhost>:<password>@rat.rmq2.cloudamqp.com/<username>"
 containers/app/amqp/.env
 
 ***Note***: ```<user & vhost>``` and ```<password>``` needs to be replaced by the user & vhost and password as provided on the web page in CloudAMQP shown previously.
-  
+
+By this process, we create an AQMP service. 
+
+Now it is time to run our ```publisher``` and ```consumer```. To do this, in two **separate terminals***, run these commands respectively:
+
+```
+$ cd containers/app/amqp/
+$ nodemon ./consumers/shippingConsumer --exec babel-node -e js
+```
+Terminal One
+
+```
+$ cd containers/app/amqp/
+$ nodemon ./consumers/shippingPublisher --exec babel-node -e js
+```
+Terminal Two
+
+After applying these steps, we should see this message in the terminal where shippingConsumer.js is running (here Terminal One:
+
+```
+{ name: 'test', status: 'shipping' }
+```
+
+At this time we have a working service! This service is using AMQP as a communication protocol. The service has two ends; one is a publisher, and the other is a consumer. The publisher sends a message to the message broker after this process publisher’s job is done and it doesn’t wait for any reply. The consumer just cares about what the message header includes. In that case, the consumer cares about messages which have shipping statement in their header. There are nothing consumer needs except the message header.
+
+In the next step, we are going to publish messages when an HTTP request is received.
+
+
 == WE ARE HERE ==
