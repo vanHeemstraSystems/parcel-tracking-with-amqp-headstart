@@ -124,6 +124,8 @@ Add the following content to this file:
 ```
 AMQP_URL="amqps://<username>:<password>@<server>/..."
 ```
+containers/app/amqp/sample.env
+
 Now make a copy of ```sample.env```:
 
 ```
@@ -133,7 +135,10 @@ $ cp sample.env .env
 
 Write these lines down in this ```.env``` file:
 
+```
 AMQP_URL="amqps://<user & vhost>:<password>@rat.rmq2.cloudamqp.com/<username>"
+```
+containers/app/amqp/.env
 
 ***Note***: ```<user & vhost>``` and ```<password>``` needs to be replaced by the user & vhost and password as provided on the web page in CloudAMQP shown previously.
   
