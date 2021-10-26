@@ -181,12 +181,37 @@ containers/app/amqp/models/Tracking.js
 
 Setup a database connection, here using ***MongoDB***.
 
-
 To configure MongoDB, let’s create an account in [mongodb.com/cloud](mongodb.com/cloud). 
 
 ![Screenshot 2021-10-26 164638](https://user-images.githubusercontent.com/12828104/138904041-c0c87bad-ab6e-4422-8b1f-fa0a8db606ae.png)
 
-After having created an account, create an organization (here e.g.: 'Not Applicable'), a project in the organization (here e.g.:'Parcel Tracking'), and a cluster in the project. 
+After having created an account, create an organization (here e.g.: 'not-applicable'), a project in the organization (here e.g.:'Parcel Tracking'). 
+
+![Screenshot 2021-10-26 165434](https://user-images.githubusercontent.com/12828104/138905192-82a57280-cbea-41d9-9aca-d69451130eb2.png)
+Organization
+
+![Screenshot 2021-10-26 165747](https://user-images.githubusercontent.com/12828104/138905886-d0ae8cac-e201-4ac3-b0d5-2a1659f281c3.png)
+Projects
+
+![Screenshot 2021-10-26 170002](https://user-images.githubusercontent.com/12828104/138906212-773ee89a-7c70-4a81-a95f-59f0dece36bd.png)
+Project "Parcel Tracking" at 
+
+Click "Build a Database" in the project "Parcel Tracking":
+
+![Screenshot 2021-10-26 170143](https://user-images.githubusercontent.com/12828104/138906922-dda92b12-b727-40cf-8e48-2a7f345098f3.png)
+Database
+
+
+
+
+
+
+
+
+
+
+
+
 
 After the cluster is created, on the page of the cluster, click Database Access. 
 
