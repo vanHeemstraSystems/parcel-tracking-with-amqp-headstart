@@ -106,12 +106,12 @@ Go to the [page](https://customer.cloudamqp.com/instance/) where message brokers
 
 https://api.cloudamqp.com/console/4307ae60-fb8b-4497-8935-44d858dd94e1/details
 
-Copy the value of AMQP URL in the Details section where is in the page came up. 
+Copy the value of AMQP URL in the Details section of above web page. 
 
 ```
-AMQP URL = amqps://<username>:<password>@rat.rmq2.cloudamqp.com/<username>
+AMQP URL = amqps://<user & vhost>:<password>@rat.rmq2.cloudamqp.com/<username>
 ```
-***Note***: ```<username>``` and ```<password>``` needs to be replaced by the username and password as provided on the web page in CloudAMQP shown previously.
+***Note***: ```<user & vhost>``` and ```<password>``` needs to be replaced by the user & vhost and password as provided on the web page in CloudAMQP shown previously.
 
 
 == WE ARE HERE ==
