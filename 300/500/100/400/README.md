@@ -56,7 +56,7 @@ Now, let’s write the consumer which is going to take the message which is sent
 import Tortoise from "tortoise";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import Track from "../model/Tracking";
+import Track from "../models/Tracking";
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL, {
@@ -143,6 +143,21 @@ containers/app/amqp/.env
 ***Note***: ```<user & vhost>``` and ```<password>``` needs to be replaced by the user & vhost and password as provided on the web page in CloudAMQP shown previously.
 
 By this process, we create an AQMP service. 
+
+Now create a directory called 'models'.
+
+```
+$ cd containers/app/amqp
+$ mkdir models
+```
+
+Inside the ```models``` directory create a file called ```Tracking.js```:
+
+```
+$ cd containers/app/amqp/models
+$ touch Tracking.js
+```
+containers/app/amqp/Tracking.js
 
 Now it is time to run our ```publisher``` and ```consumer```. To do this, in two **separate terminals***, run these commands respectively:
 
