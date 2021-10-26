@@ -184,8 +184,9 @@ Setup a database connection, here using ***MongoDB***.
 
 To configure MongoDB, let’s create an account in [mongodb.com/cloud](mongodb.com/cloud). 
 
+![Screenshot 2021-10-26 164638](https://user-images.githubusercontent.com/12828104/138904041-c0c87bad-ab6e-4422-8b1f-fa0a8db606ae.png)
 
-After having created an account, create an organization, a project in the organization, and a cluster in the project. 
+After having created an account, create an organization (here e.g.: 'Not Applicable'), a project in the organization (here e.g.:'Parcel Tracking'), and a cluster in the project. 
 
 After the cluster is created, on the page of the cluster, click Database Access. 
 
