@@ -175,6 +175,16 @@ export default Track;
 ```
 containers/app/amqp/models/Tracking.js
 
+Setup a database connection, here using ***MongoDB***.
+
+== WE ARE HERE ==
+
+
+
+
+
+
+
 Now it is time to run our ```publisher``` and ```consumer```. To do this, in two **separate terminals***, run these commands respectively:
 
 ```
