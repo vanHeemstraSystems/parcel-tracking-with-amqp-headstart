@@ -86,5 +86,17 @@ tortoise
 ```
 containers/app/amqp/consumers/shippingConsumer.js
 
+We can prefer to install RabbitMQ on our local machine but in that case, the installation steps would be different from the operating system to the operating system and we would need to mess with some network settings. Therefore, we make this step with [cloudamqp.com](http://cloudamqp.com/). To do that let’s create an account on [cloudamqp.com](http://cloudamqp.com/). 
+
+After you have created and account on CloudAMQP, click on the button Create New Instance and create a new message broker instance. We can name the instance as we wish (here: **Parcel Tracking**). 
+
+For a free plan, choose the Little Lemur option. 
+
+Then press the buttons named Select Region (e.g. Amazon Web Services EU-West-3 (Paris)) > Review > Create Instance respectively. 
+
+IMAGE OF CLOUDAMQP HERE
+
+https://customer.cloudamqp.com/instance/
+
 
 == WE ARE HERE ==
