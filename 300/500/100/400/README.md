@@ -100,12 +100,18 @@ Then press the buttons named Select Region (e.g. Amazon Web Services EU-West-3 (
 
 https://customer.cloudamqp.com/instance/
 
+Go to the [page](https://customer.cloudamqp.com/instance/) where message brokers are listed and click on the name of the message broker instance we just created (here: **Parcel Tracking**). 
+
 ![Screenshot 2021-10-26 133555](https://user-images.githubusercontent.com/12828104/138869981-ab93fde5-9925-4dfe-bb4f-96f4bccbcffd.png)
 
 https://api.cloudamqp.com/console/4307ae60-fb8b-4497-8935-44d858dd94e1/details
 
+Copy the value of AMQP URL in the Details section where is in the page came up. 
 
-
+```
+AMQP URL = amqps://<username>:<password>@rat.rmq2.cloudamqp.com/<username>
+```
+***Note***: ```<username>``` and ```<password>``` needs to be replaced by the username and password as provided on the web page in CloudAMQP shown previously.
 
 
 == WE ARE HERE ==
