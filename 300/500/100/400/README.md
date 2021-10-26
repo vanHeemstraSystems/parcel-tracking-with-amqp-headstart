@@ -201,27 +201,53 @@ Click "Build a Database" in the project "Parcel Tracking":
 ![Screenshot 2021-10-26 170143](https://user-images.githubusercontent.com/12828104/138906922-dda92b12-b727-40cf-8e48-2a7f345098f3.png)
 Database
 
+Choose the "Shared" option, so your database will be for free.
 
+![Screenshot 2021-10-26 170601](https://user-images.githubusercontent.com/12828104/138907375-d67920e2-e80d-4180-aa7c-313668f4beab.png)
+Shared Database
 
+Choose a Cloud Provider (here: Google Cloud Platform), a Region (here: GCP, Belgium europe-west1, and click "Create Cluster".
 
+![Screenshot 2021-10-26 170800](https://user-images.githubusercontent.com/12828104/138907941-da954231-6c2e-45c0-b19a-3675adedfd60.png)
+Create Cluster
 
+![Screenshot 2021-10-26 171025](https://user-images.githubusercontent.com/12828104/138908109-9443b20a-ff2f-44a6-8347-4165ce4b27cd.png)
+Cluster on GCP Belgium being created ...
 
-
-
-
-
-
-
+![Screenshot 2021-10-26 171337](https://user-images.githubusercontent.com/12828104/138908665-6f5bb1d6-bd85-4131-9287-b361556ac6b1.png)
+Cluster on GCP Belgium created at https://cloud.mongodb.com/v2/6178183a73828721b574c707#clusters?fastPoll=true
 
 After the cluster is created, on the page of the cluster, click Database Access. 
 
+![Screenshot 2021-10-26 171531](https://user-images.githubusercontent.com/12828104/138909013-24861329-bec5-4f61-a503-f5b6c5896586.png)
 Click ADD NEW DATABASE USER choice there and create a database user. 
 
-Next, click the Cluster option on the left bar. 
+![Screenshot 2021-10-26 171812](https://user-images.githubusercontent.com/12828104/138909799-823cbbf1-1925-4dcd-a8f6-1334283f9dc6.png)
+
+Username: ***parcel-tracking-user-001***
+
+Password: [ S E C R E T ]
+
+![Screenshot 2021-10-26 172335](https://user-images.githubusercontent.com/12828104/138910506-e1430c6c-8d2c-4911-ae92-9ba0eee57713.png)
+User created
+
+== WE ARE HERE ==
+
+Next, click the Databases option on the left bar. 
+
+![Screenshot 2021-10-26 172519](https://user-images.githubusercontent.com/12828104/138910833-89c292ca-6029-4659-877e-5ca1e9250f2d.png)
 
 On the opened page, click the Connect button. 
 
-In Setup connection security step, choose **Allow anywhere** option and click Choose a connection method. 
+
+
+In Setup connection security step, choose **Allow Access from anywhere** option and click Choose a connection method. 
+
+![Screenshot 2021-10-26 172714](https://user-images.githubusercontent.com/12828104/138911167-123cc867-37c8-4b15-a499-bc8d224be4fa.png)
+Allow Access from Anywhere
+
+
+
 
 Then let’s click the Connect your application option and copy the connection information under Add your connection string into your application code. 
 
