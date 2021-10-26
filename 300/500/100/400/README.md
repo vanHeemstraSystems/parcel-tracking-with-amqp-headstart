@@ -159,6 +159,22 @@ $ touch Tracking.js
 ```
 containers/app/amqp/Tracking.js
 
+Add the following content to the ```Tracking.js``` file:
+
+```
+import mongoose from "mongoose";
+
+const trackingSchema = new mongoose.Schema({
+  name: String,
+  status: String,
+});
+
+const Track = mongoose.model("Track", trackingSchema);
+
+export default Track;
+```
+containers/app/amqp/models/Tracking.js
+
 Now it is time to run our ```publisher``` and ```consumer```. To do this, in two **separate terminals***, run these commands respectively:
 
 ```
