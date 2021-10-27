@@ -36,6 +36,19 @@ $ cd containers
 $ mkdir app
 ```
 
+Add a .gitignore file to the ```app``` folder.
+
+$ cd containers/app
+$ touch .gitignore
+Add the following to the .gitignore file.
+
+```
+docker-compose.dev.yml
+docker-compose.prod.yml
+.env
+```
+containers/app/.gitignore
+
 Inside the app directory create a ***sample environment*** file.
 
 ```
