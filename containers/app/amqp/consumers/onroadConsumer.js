@@ -33,7 +33,7 @@ tortoise
             return parcel;
           }
         }
-      );
+      ).catch();
       ack();
     } catch (err) {
       console.log('error', err)
