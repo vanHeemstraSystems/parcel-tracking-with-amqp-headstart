@@ -665,6 +665,8 @@ Now, go to into the ```amqp``` folder and run these commands, each from a differ
 
 ***Note***: Make sure no other services are running at the port (here: 8000) you specified for server.js.
 
+In Terminal One type:
+
 ```
 $ cd containers/app/amqp
 $ nodemon ./server --exec babel-node -e js
@@ -684,17 +686,23 @@ Connected to database
 ```
 Terminal One
 
+In Terminal Two type:
+
 ```
 $ cd containers/app/amqp
 $ nodemon ./consumers/shippingConsumer --exec babel-node -e js
 ```
 Ternminal Two
 
+In Terminal Three type:
+
 ```
 $ cd containers/app/amqp
 $ nodemon ./consumers/onroadConsumer --exec babel-node -e js
 ```
 Terminal Three
+
+In Terminal Four type:
 
 ```
 $ cd containers/app/amqp
