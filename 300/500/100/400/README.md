@@ -756,9 +756,48 @@ Terminal Four
 
 Whilst all above commands run, open underneath links up in a browser respectively:
 
+--
+
 ```
 localhost:8000/shipping/test
 ```
+
+What happened?
+
+Your browser will display the following text:
+
+```
+shipping
+```
+
+Also in your Terminal Two (shippingCustomer), you see the following (where ObjectId may differ):
+
+```
+shipped parcel: {
+  name: 'test',
+  status: 'shipping',
+  _id: new ObjectId("61794266fb03955e5ae001d6"),
+  __v: 0
+}
+```
+
+In addition, in MongoDB a new record (i.e. document) will have been created, see **Collections** under project "Parcel Tracking", at https://cloud.mongodb.com/v2/6178183a73828721b574c707#metrics/replicaSet/61781b167e7e2448f47380b9/explorer/parceltracking/tracks/find
+
+![Screenshot 2021-10-27 143636](https://user-images.githubusercontent.com/12828104/139066825-dc690585-30c0-490a-8b3c-7a95fa0f715f.png)
+
+```
+{"_id":{"$oid":"61794266fb03955e5ae001d6"},"name":"test","status":"shipping","__v":{"$numberInt":"0"}}
+```
+parceltracking.tracks
+
+Furthermore, you will have seen a spike on RabbitMQ (at Cloud AMQP) as a new message was created in the queue by the shipping publisher and soon thereafter removed by the shipping consumer. See https://rat.rmq2.cloudamqp.com (login with username ```ikfeemyq``` if logged out and find the password in containers/app/amqp/.env).
+
+![Screenshot 2021-10-27 143318](https://user-images.githubusercontent.com/12828104/139066309-2a0a085c-9944-4fb0-8996-99066c2d6de8.png)
+
+See the exchange called ```parcel-tracking``` which was created.
+
+--
+
 
 ```
 localhost:8000/onroad/test
