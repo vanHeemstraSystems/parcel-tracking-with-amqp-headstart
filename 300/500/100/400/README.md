@@ -34,16 +34,19 @@ $ touch shippingConsumer.js
 Write this code down to the ```shippingPublisher.js``` file:
 
 ```
-import Tortoise from "tortoise";        
+import Tortoise from "tortoise";
 import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
-const tortoise = new Tortoise(process.env.AMQP_URL)
-  new Promise((resolve, reject) => {  
-    tortoise      
-      .exchange("parcel-tracking", "topic", { durable: false })      
-      .publish("parcel.shipping", { name: "test", status: "shipping" });
+const tortoise = new Tortoise(process.env.AMQP_URL);
+
+const shippingPublisher = (name) =>
+  new Promise((resolve, reject) => {
+    tortoise
+      .exchange("parcel-tracking", "topic", { durable: false })
+      .publish("parcel.shipping", { name, status: "shipping" });
+    resolve(tortoise);
   });
 
 export default shippingPublisher;  
@@ -56,7 +59,7 @@ Now, let’s write the consumer which is going to take the message which is sent
 import Tortoise from "tortoise";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import Track from "../models/Tracking";
+import Track from "../model/Tracking";
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL, {
