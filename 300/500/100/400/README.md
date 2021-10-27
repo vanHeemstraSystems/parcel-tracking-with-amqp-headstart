@@ -192,7 +192,7 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => console.log("Connected to database"));
 
-const tortoise = new Tortoise(process.env.AMQP_SERVER);
+const tortoise = new Tortoise(process.env.AMQP_URL);
 tortoise
   .queue("", { durable: false })
   .exchange("parcel-tracking", "topic", "*.onroad", { durable: false })
@@ -240,7 +240,7 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => console.log("Connected to database"));
 
-const tortoise = new Tortoise(process.env.AMQP_SERVER);
+const tortoise = new Tortoise(process.env.AMQP_URL);
 tortoise
   .queue("", { durable: false })
   .exchange("parcel-tracking", "topic", "*.delivered", { durable: false })
