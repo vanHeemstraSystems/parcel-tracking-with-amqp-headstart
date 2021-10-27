@@ -25,7 +25,7 @@ tortoise
         { name: msg.name },
         { status: msg.status },
         (err, parcel) => {
-          if (err) throw err;
+          if (err) console.log(err);
           else return parcel;
         }
       ).catch(function () { console.log("Update rejected"); });
