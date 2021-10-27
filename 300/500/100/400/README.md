@@ -371,4 +371,56 @@ In the next step, we are going to publish messages when an HTTP request is recei
 
 ## Configure HTTP Requests
 
+As the server (at ```containers/app/amqp/server.js```) receives HTTP requests, publishers (at ```containers/app/amqp/publishers/```) will be executed and as these publishers send messages to the message broker, our consumers  (at ```containers/app/amqp/consumers/```) are going to listen to these messages.
+
+Now let’s create HTTP routes. 
+
+For the sake of best practice and clean code create a folder named ```routes``` under the ```amqp``` folder.
+
+```
+$ cd containers/app/amqp
+$ mkdir routes
+```
+
+Create a file named ```index.js``` inside the ```routes``` folder. 
+
+```
+$ cd containers/app/amqp/routes
+$ touch index.js
+```
+
+Next, write these lines down to the index.js file:
+
+```
+import { Router } from "express";
+import shippingPublishers from "../publishers/shippingPublisher";
+import onroadPublisher from "../publishers/onroadPublisher";
+import deliveredPublisher from "../publishers/deliveredPublisher";
+
+const router = Router();
+
+router.get("/", (req, res) => {
+  res.send("Welcome to parcel tracking system");
+});
+
+router.get("/shipping/:name", async (req, res, next) => {
+  const name = req.params.name;
+  await shippingPublishers(name).then(res.send("shipping"));
+});
+
+router.get("/onroad/:name", async (req, res, next) => {
+  const name = req.params.name;
+  await onroadPublisher(name).then(res.send("onroad"));
+});
+
+router.get("/delivered/:name", async (req, res, next) => {
+  const name = req.params.name;
+  await deliveredPublisher(name).then(res.send("delivered"));
+});
+
+export default router;
+```
+containers/app/amqp/routes/index.js
+
+
 == WE ARE HERE ==
