@@ -686,6 +686,8 @@ Connected to database
 ```
 Terminal One
 
+--
+
 In Terminal Two type:
 
 ```
@@ -703,9 +705,10 @@ You will be prompted somewhat like below:
 [nodemon] watching extensions: js
 [nodemon] starting `babel-node ./consumers/shippingConsumer.js`
 Connected to database
-consumers
 ```
 Terminal Two
+
+--
 
 In Terminal Three type:
 
@@ -715,6 +718,20 @@ $ nodemon ./consumers/onroadConsumer --exec babel-node -e js
 ```
 Terminal Three
 
+You will be prompted somewhat like below:
+
+```
+[nodemon] 2.0.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js
+[nodemon] starting `babel-node ./consumers/onroadConsumer.js`
+Connected to database
+```
+Terminal Three
+
+--
+
 In Terminal Four type:
 
 ```
@@ -722,5 +739,7 @@ $ cd containers/app/amqp
 $ nodemon ./consumers/deliveredConsumer --exec babel-node -e js
 ```
 Terminal Four
+
+--
 
 == WE ARE HERE ==
