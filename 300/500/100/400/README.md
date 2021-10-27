@@ -8,27 +8,21 @@ In these steps, we are going to create our first ```Publisher``` and ```Consumer
 
 For now, we will log to the console the message which we get via the ```Consumer```. 
 
-To do that let’s create two folders named ```publishers``` and ```consumers``` inside the existing folder called ```amqp```.
+## Create Publishers
+
+Let’s create a folder named ```publishers``` inside the existing folder called ```amqp```.
 
 ```
 $ cd containers/app/amqp
 $ mkdir publishers
-$ mkdir consumers
 ```
+### Shipping Publisher
 
 In the ```publishers``` folder, create a file named ```shippingPublisher.js```.
 
 ```
 $ cd containers/app/amqp/publishers
 $ touch shippingPublisher.js
-```
-
-And in the ```consumers``` folder, create a file named ```shippingConsumer.js```.
-
-
-```
-$ cd containers/app/amqp/consumers
-$ touch shippingConsumer.js
 ```
 
 Write this code down to the ```shippingPublisher.js``` file:
@@ -53,7 +47,89 @@ export default shippingPublisher;
 ```
 containers/app/amqp/publishers/shippingPublisher.js
 
-Now, let’s write the consumer which is going to take the message which is sent to the message broker by the publisher. To do this write this code down to the ```shippingConsumer.js``` file:
+### OnRoad Publisher
+
+In the ```publishers``` folder, create a file named ```onroadPublisher.js```.
+
+```
+$ cd containers/app/amqp/publishers
+$ touch onroadPublisher.js
+```
+
+Write this code down to the ```onroadPublisher.js``` file:
+
+```
+import Tortoise from "tortoise";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const tortoise = new Tortoise(process.env.AMQP_URL);
+
+const onroadPublisher = (name) =>
+  new Promise((resolve, reject) => {
+    tortoise
+      .exchange("parcel-tracking", "topic", { durable: false })
+      .publish("parcel.onroad", { name, status: "onroad" });
+    resolve(tortoise);
+  });
+
+export default onroadPublisher;  
+```
+containers/app/amqp/publishers/onroadPublisher.js
+
+### Delivered Publisher
+
+In the ```publishers``` folder, create a file named ```deliveredPublisher.js```.
+
+```
+$ cd containers/app/amqp/publishers
+$ touch deliveredPublisher.js
+```
+
+Write this code down to the ```deliveredPublisher.js``` file:
+
+```
+import Tortoise from "tortoise";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const tortoise = new Tortoise(process.env.AMQP_URL);
+
+const deliveredPublisher = (name) =>
+  new Promise((resolve, reject) => {
+    tortoise
+      .exchange("parcel-tracking", "topic", { durable: false })
+      .publish("parcel.delivered", { name, status: "delivered" });
+    resolve(tortoise);
+  });
+
+export default deliveredPublisher;  
+```
+containers/app/amqp/publishers/deliveredPublisher.js
+
+## Create Consumers
+
+Now, let’s write the consumer which is going to take the message which is sent to the message broker by the publisher. 
+
+Let’s create a folder named ```consumers``` inside the existing folder called ```amqp```.
+
+```
+$ cd containers/app/amqp
+$ mkdir consumers
+```
+
+### Shipping Consumer
+
+In the ```consumers``` folder, create a file named ```shippingConsumer.js```.
+
+```
+$ cd containers/app/amqp/consumers
+$ touch shippingConsumer.js
+```
+
+To do this write this code down to the ```shippingConsumer.js``` file:
 
 ```
 import Tortoise from "tortoise";
@@ -88,6 +164,102 @@ tortoise
   });
 ```
 containers/app/amqp/consumers/shippingConsumer.js
+
+### OnRoad Consumer
+
+In the ```consumers``` folder, create a file named ```onroadConsumer.js```.
+
+```
+$ cd containers/app/amqp/consumers
+$ touch onroadConsumer.js
+```
+
+To do this write this code down to the ```onroadConsumer.js``` file:
+
+```
+import Tortoise from "tortoise";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import Track from "../model/Tracking";
+dotenv.config();
+
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => console.log("Connected to database"));
+
+const tortoise = new Tortoise(process.env.AMQP_SERVER);
+tortoise
+  .queue("", { durable: false })
+  .exchange("parcel-tracking", "topic", "*.onroad", { durable: false })
+  .prefetch(1)
+  .json()
+  .subscribe(async (msg, ack, nack) => {
+    const onroadParcel = await Track.updateOne(
+      { name: msg.name },
+      { status: msg.status },
+      (err, parcel) => {
+        if (err) throw err;
+        else return parcel;
+      }
+    );
+    console.log("parcel is on road:", onroadParcel);
+    ack();
+  });
+```
+containers/app/amqp/consumers/onroadConsumer.js
+
+### Delivered Consumer
+
+In the ```consumers``` folder, create a file named ```deliveredConsumer.js```.
+
+```
+$ cd containers/app/amqp/consumers
+$ touch deliveredConsumer.js
+```
+
+To do this write this code down to the ```deliveredConsumer.js``` file:
+
+```
+import Tortoise from "tortoise";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import Track from "../model/Tracking";
+dotenv.config();
+
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => console.log("Connected to database"));
+
+const tortoise = new Tortoise(process.env.AMQP_SERVER);
+tortoise
+  .queue("", { durable: false })
+  .exchange("parcel-tracking", "topic", "*.delivered", { durable: false })
+  .prefetch(1)
+  .json()
+  .subscribe(async (msg, ack, nack) => {
+    const deliveredParcel = await Track.updateOne(
+      { name: msg.name },
+      { status: msg.status },
+      (err, parcel) => {
+        if (err) throw err;
+        else return parcel;
+      }
+    );
+    console.log("parcel was delivered:", deliveredParcel);
+    ack();
+  });
+```
+containers/app/amqp/consumers/deliveredConsumer.js
 
 ## Configure RabbitMQ
 
