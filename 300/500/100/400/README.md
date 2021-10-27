@@ -321,6 +321,20 @@ containers/app/amqp/.env
 
 By this process, we create an AQMP service. 
 
+Add a ```.gitignore``` file to the ```amqp``` folder.
+
+```
+$ cd containers/app/amqp
+$ touch .gitignore
+```
+
+Add the following to the .gitignore file.
+
+```
+.env
+```
+containers/app/amqp/.gitignore
+
 Now create a directory called 'models'.
 
 ```
