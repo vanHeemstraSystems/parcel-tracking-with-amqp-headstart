@@ -694,6 +694,19 @@ $ nodemon ./consumers/shippingConsumer --exec babel-node -e js
 ```
 Ternminal Two
 
+You will be prompted somewhat like below:
+
+```
+[nodemon] 2.0.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js
+[nodemon] starting `babel-node ./consumers/shippingConsumer.js`
+Connected to database
+consumers
+```
+Terminal Two
+
 In Terminal Three type:
 
 ```
