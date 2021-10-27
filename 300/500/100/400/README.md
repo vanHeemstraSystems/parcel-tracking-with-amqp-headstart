@@ -264,7 +264,7 @@ Then let’s click the ***Connect your application*** option.
 ![Screenshot 2021-10-27 093828](https://user-images.githubusercontent.com/12828104/139021355-34669a22-d8e6-494f-9c57-a685807f107b.png)
 Select Driver and Version
 
-WE are OK with choosing ***Node.js*** as the Driver, and ***4.0.or later*** as the Version.
+We are OK with choosing ***Node.js*** as the Driver, and ***4.0.or later*** as the Version.
 
 The MONGODB_URL is ```mongodb+srv://parcel-tracking-user-001:<password>@cluster0.dgxs7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority```
 
