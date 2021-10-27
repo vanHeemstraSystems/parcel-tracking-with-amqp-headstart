@@ -661,5 +661,30 @@ PORT="8000"
 ```
 containers/app/amqp/.env
 
+Now, go to into the ```amqp``` folder and run these commands, each from a different terminal:
+
+```
+$ cd containers/app/amqp
+$ nodemon ./server --exec babel-node -e js
+```
+Terminal One
+
+```
+$ cd containers/app/amqp
+$ nodemon ./consumers/shippingConsumer --exec babel-node -e js
+```
+Ternminal Two
+
+```
+$ cd containers/app/amqp
+$ nodemon ./consumers/onroadConsumer --exec babel-node -e js
+```
+Terminal Three
+
+```
+$ cd containers/app/amqp
+$ nodemon ./consumers/deliveredConsumer --exec babel-node -e js
+```
+Terminal Four
 
 == WE ARE HERE ==
