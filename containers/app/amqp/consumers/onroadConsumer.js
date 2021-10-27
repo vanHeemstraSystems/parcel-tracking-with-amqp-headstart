@@ -1,7 +1,7 @@
 import Tortoise from "tortoise";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import Track from "../models/Tracking";
+import Track from "../model/Tracking";
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL, {
@@ -20,22 +20,14 @@ tortoise
   .prefetch(1)
   .json()
   .subscribe(async (msg, ack, nack) => {
-    try {      
-      const onroadParcel = await Track.updateOne(
-        { name: msg.name },
-        { status: msg.status },
-        (err, parcel) => {
-          if (err) {
-            throw err;
-          } 
-          else {
-            console.log("parcel is on road:", onroadParcel);
-            return parcel;
-          }
-        }
-      );
-      ack();
-    } catch (err) {
-      console.log('error', err)
-    }
+    const onroadParcel = await Track.updateOne(
+      { name: msg.name },
+      { status: msg.status },
+      (err, parcel) => {
+        if (err) throw err;
+        else return parcel;
+      }
+    );
+    console.log("parcel is on road:", onroadParcel);
+    ack();
   });
