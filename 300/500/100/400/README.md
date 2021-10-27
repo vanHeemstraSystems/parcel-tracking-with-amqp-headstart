@@ -878,5 +878,8 @@ In sum, as we open up the links, we should see messages which go to the message 
 
 After seeing both the terminal where consumers are running on and the JSON data which are returned in the browser, we can be sure that both publishers and consumers are running as the server receives HTTP requests.
 
+Click the Collections tab in the Cluster page in the MongoDB Cloud. In the page that came up, click the collection named tracks under the parceltracking.
 
-== WE ARE HERE ==
+If our queries are correct, each time when shippingConsumer handles the message, a new record is going to be added to MongoDB, and each time other consumers handle the messages, the record will be updated. To show changes in the record, you will need to click the Refresh button on the Collections page
+
+Now it is time to use Web Socket in order to render the changes in the records.
