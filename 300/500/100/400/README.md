@@ -285,28 +285,7 @@ client.connect(err => {
 
 Replace ```<password>``` with the password for the ***parcel-tracking-user-001*** user. Replace ```myFirstDatabase``` with the name of the database that connections will use by default (here: ***parcel-tracking***). Ensure any option params are [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding).
 
-Copy the connection information under ```Add your connection string``` into your application code. 
-
-```
-$ cd containers/app/amqp
-```
-
-```
-...
-MONGODB_URL="mongodb+srv://parcel-tracking-user-001:<password>@cluster0.dgxs7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-...
-```
-containers/app/amqp/.env
-
-Replace ```<password>``` with the password for the ***parcel-tracking-user-001*** user. Replace ```myFirstDatabase``` with the name of the database that connections will use by default (here: ***parcel-tracking***). Ensure any option params are [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding).
-
-Click ***Close***.
-
-
-
-== WE ARE HERE ==
-
-
+Copy the connection information under ```Add your connection string``` to go into your application code. 
 
 Let’s go back to the text editor and create a variable named ```MONGODB_URL``` in the ```sample.env``` file and assign the MongoDB connection information to the variable. 
 
@@ -324,14 +303,20 @@ $ cd containers/app/amqp
 $ cp sample.env .env
 ```
 
-Change the ```.env``` file for the variable ```MONGODB_URL``` with the password just created in Database Access step and change myFirstDatabase as ```parceltracking```:
+```
+...
+MONGODB_URL="mongodb+srv://parcel-tracking-user-001:<password>@cluster0.dgxs7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+...
+```
+containers/app/amqp/.env
+
+Replace ```<password>``` with the password for the ***parcel-tracking-user-001*** user. Replace ```myFirstDatabase``` with the name of the database that connections will use by default (here: ***parcel-tracking***). Ensure any option params are [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding).
+
+Click ***Close***.
+
 
 
 == WE ARE HERE ==
-
-
-
-
 
 
 
