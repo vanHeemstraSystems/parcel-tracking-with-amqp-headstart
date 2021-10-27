@@ -231,23 +231,35 @@ Password: [ S E C R E T ]
 ![Screenshot 2021-10-26 172335](https://user-images.githubusercontent.com/12828104/138910506-e1430c6c-8d2c-4911-ae92-9ba0eee57713.png)
 User created
 
-== WE ARE HERE ==
-
 Next, click the Databases option on the left bar. 
 
 ![Screenshot 2021-10-26 172519](https://user-images.githubusercontent.com/12828104/138910833-89c292ca-6029-4659-877e-5ca1e9250f2d.png)
 
-On the opened page, click the Connect button. 
+On the opened page, click the ***Connect*** button.
 
-
-
-In Setup connection security step, choose **Allow Access from anywhere** option and click Choose a connection method. 
+In Setup connection security step, choose **Allow Access from anywhere** option. 
 
 ![Screenshot 2021-10-26 172714](https://user-images.githubusercontent.com/12828104/138911167-123cc867-37c8-4b15-a499-bc8d224be4fa.png)
 Allow Access from Anywhere
 
+![Screenshot 2021-10-27 092407](https://user-images.githubusercontent.com/12828104/139019448-18dda22a-53c1-4734-b215-fae5ab261db4.png)
+Add IP Addresses
+
+***Note***: Adding the CIDR ```0.0.0.0/0``` allows access from anywhere. Ensure that strong credentials (username and password) are used for all database users when allowing access from anywhere.
+
+Click Add for the IP address ```0.0.0.0/0``` with description ***"Allow Access from Anywhere"***.
+
+![Screenshot 2021-10-27 092829](https://user-images.githubusercontent.com/12828104/139019902-9f3394df-4438-4ea1-8193-2ad9b62e33e9.png)
+IP Address 0.0.0.0/0 Added
+
+We previously created a database user (i.e. parcel-tracking-user-001), so we can continue.
+
+Click ***Choose a connection method***.
 
 
+
+
+== WE ARE HERE ==
 
 Then let’s click the Connect your application option and copy the connection information under Add your connection string into your application code. 
 
