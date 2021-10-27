@@ -20,11 +20,6 @@ Add the following content to the newly created .gitignore file:
 
 ```
 node_modules
-/containers/app/docker-compose.dev.yml
-/containers/app/docker-compose.prod.yml
-/containers/app/.env
-/containers/app/webui/nginx/nginx.conf
-/containers/app/amqp/.env
 ```
 .gitignore
 
