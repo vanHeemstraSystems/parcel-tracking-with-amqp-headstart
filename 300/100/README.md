@@ -151,3 +151,38 @@ Take care of the reported vulnerabilities by running the following command from 
 $ cd webui
 $ npm audit fix
 ```
+
+Add a .gitignore file to the ```webui``` folder.
+
+$ cd containers/app/webui
+$ touch .gitignore
+Add the following to the .gitignore file.
+
+```
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+/nginx/nginx.conf
+```
+containers/app/webui/.gitignore
