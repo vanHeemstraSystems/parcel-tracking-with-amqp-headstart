@@ -1,4 +1,4 @@
-# 300 - Building Development Environment
+# 300 - Building Our Application
 
 ## 100 - Project Setup
 
