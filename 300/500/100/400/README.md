@@ -754,7 +754,7 @@ Terminal Four
 
 --
 
-After all, commands run, open these links up in a browser respectively:
+Whilst all above commands run, open underneath links up in a browser respectively:
 
 ```
 localhost:8000/shipping/test
