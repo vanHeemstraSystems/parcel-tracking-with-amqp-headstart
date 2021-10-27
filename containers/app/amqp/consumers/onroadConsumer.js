@@ -20,20 +20,16 @@ tortoise
   .prefetch(1)
   .json()
   .subscribe(async (msg, ack, nack) => {
-    try {
-      const onroadParcel = await Track.findOneAndUpdate(
+    try {      
+      const onroadParcel = await Track.updateOne(
         { name: msg.name },
         { status: msg.status },
         (err, parcel) => {
-          if(err){
-            console.log(err)
-          }
-          else {
-            console.log("parcel is on road:", onroadParcel);
-            return parcel;
-          }
+          if (err) throw err;
+          else return parcel;
         }
-      ).catch();
+      );
+      console.log("parcel is on road:", onroadParcel);
       ack();
     } catch (err) {
       console.log('error', err)
