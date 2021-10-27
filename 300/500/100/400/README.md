@@ -663,9 +663,24 @@ containers/app/amqp/.env
 
 Now, go to into the ```amqp``` folder and run these commands, each from a different terminal:
 
+***Note***: Make sure no other services are running at the port (here: 8000) you specified for server.js.
+
 ```
 $ cd containers/app/amqp
 $ nodemon ./server --exec babel-node -e js
+```
+Terminal One
+
+You will be prompted somewhat like below:
+
+```
+[nodemon] 2.0.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js
+[nodemon] starting `babel-node ./server.js`
+Server listening on port 8000
+Connected to database
 ```
 Terminal One
 
