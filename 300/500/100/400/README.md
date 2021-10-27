@@ -135,7 +135,7 @@ To do this write this code down to the ```shippingConsumer.js``` file:
 import Tortoise from "tortoise";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import Track from "../model/Tracking";
+import Track from "../models/Tracking";
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL, {
@@ -180,7 +180,7 @@ To do this write this code down to the ```onroadConsumer.js``` file:
 import Tortoise from "tortoise";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import Track from "../model/Tracking";
+import Track from "../models/Tracking";
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL, {
@@ -228,7 +228,7 @@ To do this write this code down to the ```deliveredConsumer.js``` file:
 import Tortoise from "tortoise";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import Track from "../model/Tracking";
+import Track from "../models/Tracking";
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL, {
