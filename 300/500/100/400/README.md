@@ -264,12 +264,49 @@ Then let’s click the ***Connect your application*** option.
 ![Screenshot 2021-10-27 093828](https://user-images.githubusercontent.com/12828104/139021355-34669a22-d8e6-494f-9c57-a685807f107b.png)
 Select Driver and Version
 
+WE are OK with choosing ***Node.js*** as the Driver, and ***4.0.or later*** as the Version.
+
+The MONGODB_URL is ```mongodb+srv://parcel-tracking-user-001:<password>@cluster0.dgxs7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority```
+
+***Tip***: Tick the box ***Include full driver code example*** to see additional information:
+
+![Screenshot 2021-10-27 094752](https://user-images.githubusercontent.com/12828104/139022831-d2b62b58-b028-478f-8ca2-442176d62e19.png)
+
+```
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://parcel-tracking-user-001:<password>@cluster0.dgxs7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+```
+
+Replace ```<password>``` with the password for the ***parcel-tracking-user-001*** user. Replace ```myFirstDatabase``` with the name of the database that connections will use by default (here: ***parcel-tracking***). Ensure any option params are [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding).
+
+Copy the connection information under ```Add your connection string``` into your application code. 
+
+```
+$ cd containers/app/amqp
+```
+
+```
+...
+MONGODB_URL="mongodb+srv://parcel-tracking-user-001:<password>@cluster0.dgxs7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+...
+```
+containers/app/amqp/.env
+
+Replace ```<password>``` with the password for the ***parcel-tracking-user-001*** user. Replace ```myFirstDatabase``` with the name of the database that connections will use by default (here: ***parcel-tracking***). Ensure any option params are [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding).
+
+Click ***Close***.
+
 
 
 == WE ARE HERE ==
 
 
-Copy the connection information under Add your connection string into your application code. 
 
 Let’s go back to the text editor and create a variable named ```MONGODB_URL``` in the ```sample.env``` file and assign the MongoDB connection information to the variable. 
 
