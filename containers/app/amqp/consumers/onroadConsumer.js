@@ -28,7 +28,7 @@ tortoise
           if (err) throw err;
           else return parcel;
         }
-      );
+      ).catch(function () { console.log("Update rejected"); });
       console.log("parcel is on road:", onroadParcel);
       ack();
     } catch (err) {
