@@ -333,12 +333,11 @@ It should prompt somewhat like below:
 [nodemon] 2.0.14
 [nodemon] to restart at any time, enter `rs`
 [nodemon] watching path(s): *.*
+[nodemon] watching extensions: js
 [nodemon] starting 'babel-node ./consumers/shippingConsumer.js'
 Connected to database
 ```
 Terminal One
-
-== WE ARE HERE ==
 
 ```
 $ cd containers/app/amqp/
@@ -346,15 +345,30 @@ $ nodemon ./publishers/shippingPublisher --exec babel-node -e js
 ```
 Terminal Two
 
+It should prompt somewhat like below:
+
+```
+[nodemon] 2.0.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js
+[nodemon] starting 'babel-node ./publishers/shippingPublisher.js'
+[nodemon] clean exit - waiting for changes before restart
+```
+Terminal Two
+
+=== REMOVE START
 After applying these steps, we should see this message in the terminal where shippingConsumer.js is running (here Terminal One:
 
 ```
 { name: 'test', status: 'shipping' }
 ```
+=== REMOVE END
 
-At this time we have a working service! This service is using AMQP as a communication protocol. The service has two ends; one is a publisher, and the other is a consumer. The publisher sends a message to the message broker after this process publisher’s job is done and it doesn’t wait for any reply. The consumer just cares about what the message header includes. In that case, the consumer cares about messages which have shipping statement in their header. There are nothing consumer needs except the message header.
+At this time we have a working service! This service is using AMQP as a communication protocol. The service has two ends; one is a publisher, and the other is a consumer. The publisher sends a message to the message broker after this process publisher’s job is done and it doesn’t wait for any reply. The consumer just cares about what the message header includes. In that case, the consumer cares about messages which have ```shipping``` statement in their header. There is nothing the consumer needs except for the message header.
 
 In the next step, we are going to publish messages when an HTTP request is received.
 
+## Configure HTTP Requests
 
 == WE ARE HERE ==
