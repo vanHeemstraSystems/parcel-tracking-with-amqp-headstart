@@ -754,4 +754,23 @@ Terminal Four
 
 --
 
+After all, commands run, open these links up in a browser respectively:
+
+```
+localhost:8000/shipping/test
+```
+
+```
+localhost:8000/onroad/test
+```
+
+```
+localhost:8000/delivered/test
+```
+
+As we open up the links, we should see messages which go to the message broker, in the terminal in JSON format.
+
+After seeing both the terminal where consumers are running on and the JSON data which are returned in the browser, we can be sure that both publishers and consumers are running as the server receives HTTP requests.
+
+
 == WE ARE HERE ==
