@@ -154,8 +154,11 @@ $ npm audit fix
 
 Add a .gitignore file to the ```webui``` folder.
 
+```
 $ cd containers/app/webui
 $ touch .gitignore
+```
+
 Add the following to the .gitignore file.
 
 ```
