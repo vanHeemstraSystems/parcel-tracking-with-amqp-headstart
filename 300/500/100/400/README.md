@@ -543,14 +543,6 @@ It should prompt somewhat like below:
 ```
 Terminal Two
 
-=== REMOVE START
-After applying these steps, we should see this message in the terminal where shippingConsumer.js is running (here Terminal One:
-
-```
-{ name: 'test', status: 'shipping' }
-```
-=== REMOVE END
-
 At this time we have a working service! This service is using AMQP as a communication protocol. The service has two ends; one is a publisher, and the other is a consumer. The publisher sends a message to the message broker after this process publisher’s job is done and it doesn’t wait for any reply. The consumer just cares about what the message header includes. In that case, the consumer cares about messages which have ```shipping``` statement in their header. There is nothing the consumer needs except for the message header.
 
 In the next step, we are going to publish messages when an HTTP request is received.
@@ -803,9 +795,45 @@ See the exchange called ```parcel-tracking``` which was created.
 localhost:8000/onroad/test
 ```
 
+What happened?
+
+Your browser will display the following text:
+
+```
+onroad
+```
+
+Also in your Terminal Three (onroadCustomer), you see the following (where ObjectId may differ):
+
+```
+shipped parcel: {
+  name: 'test',
+  status: 'onroad',
+  _id: new ObjectId("61794266fb03955e5ae001d6"),
+  __v: 0
+}
+```
+
+In addition, in MongoDB a new record (i.e. document) will have been created, see **Collections** under project "Parcel Tracking", at https://cloud.mongodb.com/v2/6178183a73828721b574c707#metrics/replicaSet/61781b167e7e2448f47380b9/explorer/parceltracking/tracks/find
+
+![Screenshot 2021-10-27 144624](https://user-images.githubusercontent.com/12828104/139068366-391280c0-c535-4b47-8b1f-b0a35a3851e3.png)
+
+```
+{"_id":{"$oid":"61794266fb03955e5ae001d6"},"name":"test","status":"onroad","__v":{"$numberInt":"0"}}
+```
+parceltracking.tracks
+
+Furthermore, you will have seen a spike on RabbitMQ (at Cloud AMQP) as a new message was created in the queue by the onroad publisher and soon thereafter removed by the onroad consumer. See https://rat.rmq2.cloudamqp.com (login with username ```ikfeemyq``` if logged out and find the password in containers/app/amqp/.env).
+
+--
+
 ```
 localhost:8000/delivered/test
 ```
+
+== WE ARE HERE ==
+
+
 
 As we open up the links, we should see messages which go to the message broker, in the terminal in JSON format.
 
