@@ -337,12 +337,9 @@ Terminal One
 
 == WE ARE HERE ==
 
-
-
-
 ```
 $ cd containers/app/amqp/
-$ nodemon ./consumers/shippingPublisher --exec babel-node -e js
+$ nodemon ./publishers/shippingPublisher --exec babel-node -e js
 ```
 Terminal Two
 
