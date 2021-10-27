@@ -283,7 +283,7 @@ client.connect(err => {
 });
 ```
 
-Replace ```<password>``` with the password for the ***parcel-tracking-user-001*** user. Replace ```myFirstDatabase``` with the name of the database that connections will use by default (here: ***parcel-tracking***). Ensure any option params are [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding).
+Replace ```<password>``` with the password for the ***parcel-tracking-user-001*** user. Replace ```myFirstDatabase``` with the name of the database that connections will use by default (here: ***parceltracking***). Ensure any option params are [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding).
 
 Copy the connection information under ```Add your connection string``` to go into your application code. 
 
@@ -305,20 +305,14 @@ $ cp sample.env .env
 
 ```
 ...
-MONGODB_URL="mongodb+srv://parcel-tracking-user-001:<password>@cluster0.dgxs7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+MONGODB_URL="mongodb+srv://parcel-tracking-user-001:<password>@cluster0.dgxs7.mongodb.net/parceltracking?retryWrites=true&w=majority"
 ...
 ```
 containers/app/amqp/.env
 
-Replace ```<password>``` with the password for the ***parcel-tracking-user-001*** user. Replace ```myFirstDatabase``` with the name of the database that connections will use by default (here: ***parcel-tracking***). Ensure any option params are [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding).
+Replace ```<password>``` with the password for the ***parcel-tracking-user-001*** user. Replace ```myFirstDatabase``` with the name of the database that connections will use by default (here: ***parceltracking***). Ensure any option params are [URL encoded](https://dochub.mongodb.org/core/atlas-url-encoding).
 
 Click ***Close***.
-
-
-
-== WE ARE HERE ==
-
-
 
 Now it is time to run our ```publisher``` and ```consumer```. To do this, in two **separate terminals***, run these commands respectively:
 
@@ -327,6 +321,22 @@ $ cd containers/app/amqp/
 $ nodemon ./consumers/shippingConsumer --exec babel-node -e js
 ```
 Terminal One
+
+It should prompt somewhat like below:
+
+```
+[nodemon] 2.0.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] starting 'babel-node ./consumers/shippingConsumer.js'
+Connected to database
+```
+Terminal One
+
+== WE ARE HERE ==
+
+
+
 
 ```
 $ cd containers/app/amqp/
