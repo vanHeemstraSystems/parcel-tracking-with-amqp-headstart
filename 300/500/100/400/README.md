@@ -740,6 +740,18 @@ $ nodemon ./consumers/deliveredConsumer --exec babel-node -e js
 ```
 Terminal Four
 
+You will be prompted somewhat like below:
+
+```
+[nodemon] 2.0.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js
+[nodemon] starting `babel-node ./consumers/deliveredConsumer.js`
+Connected to database
+```
+Terminal Four
+
 --
 
 == WE ARE HERE ==
