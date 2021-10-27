@@ -25,11 +25,15 @@ tortoise
         { name: msg.name },
         { status: msg.status },
         (err, parcel) => {
-          if (err) throw err;
-          else return parcel;
+          if (err) {
+            throw err;
+          } 
+          else {
+            console.log("parcel is on road:", onroadParcel);
+            return parcel;
+          }
         }
       );
-      console.log("parcel is on road:", onroadParcel);
       ack();
     } catch (err) {
       console.log('error', err)
