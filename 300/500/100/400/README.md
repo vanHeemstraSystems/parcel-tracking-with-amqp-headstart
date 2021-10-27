@@ -303,6 +303,8 @@ $ cd containers/app/amqp
 $ cp sample.env .env
 ```
 
+Copy the connection information under ```Add your connection string``` and add it the MONGODB_URL variable.
+
 ```
 ...
 MONGODB_URL="mongodb+srv://parcel-tracking-user-001:<password>@cluster0.dgxs7.mongodb.net/parceltracking?retryWrites=true&w=majority"
