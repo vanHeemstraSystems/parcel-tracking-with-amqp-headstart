@@ -29,12 +29,11 @@ tortoise
             console.log(err)
           }
           else {
-            console.log(parcel)
+            console.log("parcel is on road:", onroadParcel);
             return parcel;
           }
         }
-      ).catch(function () { console.log("Update rejected"); });
-      console.log("parcel is on road:", onroadParcel);
+      );
       ack();
     } catch (err) {
       console.log('error', err)
