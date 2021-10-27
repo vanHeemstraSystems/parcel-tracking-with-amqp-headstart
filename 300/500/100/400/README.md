@@ -746,9 +746,13 @@ Terminal Four
 
 --
 
-Whilst all above commands run, open underneath links up in a browser respectively:
+Whilst all above commands run, open underneath links up in a browser respectively.
 
 --
+
+### Shipping
+
+Open the following URL in the browser.
 
 ```
 localhost:8000/shipping/test
@@ -790,6 +794,9 @@ See the exchange called ```parcel-tracking``` which was created.
 
 --
 
+### OnRoad
+
+Open the following URL in the browser.
 
 ```
 localhost:8000/onroad/test
@@ -806,7 +813,7 @@ onroad
 Also in your Terminal Three (onroadCustomer), you see the following (where ObjectId may differ):
 
 ```
-shipped parcel: {
+parcel is on road: {
   name: 'test',
   status: 'onroad',
   _id: new ObjectId("61794266fb03955e5ae001d6"),
@@ -827,15 +834,47 @@ Furthermore, you will have seen a spike on RabbitMQ (at Cloud AMQP) as a new mes
 
 --
 
+### Delivered
+
+Open the following URL in the browser.
+
 ```
 localhost:8000/delivered/test
 ```
 
-== WE ARE HERE ==
+What happened?
 
+Your browser will display the following text:
 
+```
+delivered
+```
 
-As we open up the links, we should see messages which go to the message broker, in the terminal in JSON format.
+Also in your Terminal Four (deliveredCustomer), you see the following (where ObjectId may differ):
+
+```
+parcel was delivered: {
+  name: 'test',
+  status: 'delivered',
+  _id: new ObjectId("61794266fb03955e5ae001d6"),
+  __v: 0
+}
+```
+
+In addition, in MongoDB a new record (i.e. document) will have been created, see **Collections** under project "Parcel Tracking", at https://cloud.mongodb.com/v2/6178183a73828721b574c707#metrics/replicaSet/61781b167e7e2448f47380b9/explorer/parceltracking/tracks/find
+
+![Screenshot 2021-10-27 152730](https://user-images.githubusercontent.com/12828104/139075150-435d7e05-7ab7-4d2f-995c-cb0861fc4ebb.png)
+
+```
+{"_id":{"$oid":"61794266fb03955e5ae001d6"},"name":"test","status":"delivered","__v":{"$numberInt":"0"}}
+```
+parceltracking.tracks
+
+Furthermore, you will have seen a spike on RabbitMQ (at Cloud AMQP) as a new message was created in the queue by the delivered publisher and soon thereafter removed by the delivered consumer. See https://rat.rmq2.cloudamqp.com (login with username ```ikfeemyq``` if logged out and find the password in containers/app/amqp/.env).
+
+--
+
+In sum, as we open up the links, we should see messages which go to the message broker, in the terminal in JSON format.
 
 After seeing both the terminal where consumers are running on and the JSON data which are returned in the browser, we can be sure that both publishers and consumers are running as the server receives HTTP requests.
 
