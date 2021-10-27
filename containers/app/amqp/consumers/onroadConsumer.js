@@ -29,6 +29,7 @@ tortoise
             console.log(err)
           }
           else {
+            console.log(parcel)
             return parcel;
           }
         }
