@@ -1,7 +1,7 @@
 import Tortoise from "tortoise";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import Track from "../models/Tracking";
+import Track from "../model/Tracking";
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL, {
