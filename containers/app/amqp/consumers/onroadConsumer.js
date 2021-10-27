@@ -25,8 +25,7 @@ tortoise
         { name: msg.name },
         { status: msg.status },
         (err, parcel) => {
-          if (err) console.log(err);
-          else return parcel;
+          return parcel;
         }
       ).catch(function () { console.log("Update rejected"); });
       console.log("parcel is on road:", onroadParcel);
