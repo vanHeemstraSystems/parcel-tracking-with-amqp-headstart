@@ -86,5 +86,3 @@ If successful, browse to http://localhost:8000 to see the production version of 
 ![Screenshot 2021-10-25 at 10 54 43](https://user-images.githubusercontent.com/1499433/138665819-59233cc8-65bd-489f-8a31-da4667fb11d2.png)
 
 http://localhost:8000
-
-== WE ARE HERE ==
