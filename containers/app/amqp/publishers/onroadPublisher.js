@@ -10,6 +10,6 @@ const onroadPublisher = (name) =>
       .exchange("parcel-tracking", "topic", { durable: false })
       .publish("parcel.onroad", { name, status: "onroad" });
     resolve(tortoise);
-  });
+  }).catch(() => { /* do whatever you want here */ });
 
 export default onroadPublisher;
