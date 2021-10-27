@@ -196,17 +196,17 @@ Projects
 ![Screenshot 2021-10-26 170002](https://user-images.githubusercontent.com/12828104/138906212-773ee89a-7c70-4a81-a95f-59f0dece36bd.png)
 Project "Parcel Tracking" at 
 
-Click "Build a Database" in the project "Parcel Tracking":
+Click ***Build a Database*** in the project "Parcel Tracking":
 
 ![Screenshot 2021-10-26 170143](https://user-images.githubusercontent.com/12828104/138906922-dda92b12-b727-40cf-8e48-2a7f345098f3.png)
 Database
 
-Choose the "Shared" option, so your database will be for free.
+Choose the ***Shared*** option, so your database will be for free.
 
 ![Screenshot 2021-10-26 170601](https://user-images.githubusercontent.com/12828104/138907375-d67920e2-e80d-4180-aa7c-313668f4beab.png)
 Shared Database
 
-Choose a Cloud Provider (here: Google Cloud Platform), a Region (here: GCP, Belgium europe-west1, and click "Create Cluster".
+Choose a Cloud Provider (here: Google Cloud Platform), a Region (here: GCP, Belgium europe-west1, and click ***Create Cluster***.
 
 ![Screenshot 2021-10-26 170800](https://user-images.githubusercontent.com/12828104/138907941-da954231-6c2e-45c0-b19a-3675adedfd60.png)
 Create Cluster
@@ -217,10 +217,10 @@ Cluster on GCP Belgium being created ...
 ![Screenshot 2021-10-26 171337](https://user-images.githubusercontent.com/12828104/138908665-6f5bb1d6-bd85-4131-9287-b361556ac6b1.png)
 Cluster on GCP Belgium created at https://cloud.mongodb.com/v2/6178183a73828721b574c707#clusters?fastPoll=true
 
-After the cluster is created, on the page of the cluster, click Database Access. 
+After the cluster is created, on the page of the cluster, click ***Database Access***. 
 
 ![Screenshot 2021-10-26 171531](https://user-images.githubusercontent.com/12828104/138909013-24861329-bec5-4f61-a503-f5b6c5896586.png)
-Click ADD NEW DATABASE USER choice there and create a database user. 
+Click ***Add New Database User*** choice there and create a database user. 
 
 ![Screenshot 2021-10-26 171812](https://user-images.githubusercontent.com/12828104/138909799-823cbbf1-1925-4dcd-a8f6-1334283f9dc6.png)
 
@@ -256,12 +256,20 @@ We previously created a database user (i.e. parcel-tracking-user-001), so we can
 
 Click ***Choose a connection method***.
 
+![Screenshot 2021-10-27 093605](https://user-images.githubusercontent.com/12828104/139021027-92dfaef1-2fe1-42e4-b2ec-abbbe95c25c6.png)
+Connect to Cluster
+
+Then let’s click the ***Connect your application*** option.
+
+![Screenshot 2021-10-27 093828](https://user-images.githubusercontent.com/12828104/139021355-34669a22-d8e6-494f-9c57-a685807f107b.png)
+Select Driver and Version
 
 
 
 == WE ARE HERE ==
 
-Then let’s click the Connect your application option and copy the connection information under Add your connection string into your application code. 
+
+Copy the connection information under Add your connection string into your application code. 
 
 Let’s go back to the text editor and create a variable named ```MONGODB_URL``` in the ```sample.env``` file and assign the MongoDB connection information to the variable. 
 
