@@ -631,7 +631,7 @@ Add the variable ```SERVER_PORT``` to sample.env.
 
 ```
 ...
-SERVER_PORT=""
+SERVER_PORT="8000"
 ...
 ```
 containers/app/amqp/sample.env
