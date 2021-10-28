@@ -102,6 +102,4 @@ $ nodemon ./sockets/trackerSocket --exec babel-node -e js
 
 If you see the messages ```Listening on port 8001``` and ```Connected to database``` output of the command, it means the command is running successfully.
 
-
-
-== WE ARE HERE ==
+Next, we will create a so-called "client" that will use also Socket.IO to query the MongoDB database for live updates. However, to practise the clean code policies and to separate concerns, this will be created in a separate GitHub repository named "[parcel-tracking-client-headstart](https://github.com/vanHeemstraSystems/parcel-tracking-client-headstart)". So go visit this repository for instructions, please.
