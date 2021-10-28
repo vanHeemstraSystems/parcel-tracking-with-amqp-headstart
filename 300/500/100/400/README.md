@@ -1,4 +1,4 @@
-# 600 - Publisher and Consumer Creation
+# 400 - Publisher and Consumer Creation
 
 In these steps, we are going to create our first ```Publisher``` and ```Consumer```. 
 

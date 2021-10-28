@@ -19,5 +19,3 @@ See [README.md](./400/README.md)
 ## 500 - Rendering Real-time Data With WebSocket
 
 See [README.md](./500/README.md)
-
-== WE ARE HERE =
