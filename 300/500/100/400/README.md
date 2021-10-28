@@ -619,7 +619,7 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => console.log("Connected to database"));
 const app = express();
-const port = process.env.WEBSERVER_PORT;
+const port = process.env.SERVER_PORT;
 
 app.use(router);
 
@@ -627,11 +627,11 @@ app.listen(port, () => console.log(`Server listening on port ${port}`));
 ```
 containers/app/amqp/server.js
 
-Add the variable ```WEBSERVER_PORT``` to sample.env.
+Add the variable ```SERVER_PORT``` to sample.env.
 
 ```
 ...
-WEBSERVER_PORT=""
+SERVER_PORT=""
 ...
 ```
 containers/app/amqp/sample.env
@@ -644,11 +644,11 @@ $ cd containers/app/amqp
 $ cp sample.env .env
 ```
 
-Add a Port Number (here: 8000) to .env for WEBSERVER_PORT:
+Add a Port Number (here: 8000) to .env for SERVER_PORT:
 
 ```
 ...
-WEBSERVER_PORT="8000"
+SERVER_PORT="8000"
 ...
 ```
 containers/app/amqp/.env
