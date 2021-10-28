@@ -22,13 +22,13 @@ To do this let’s create folder named socket in the ```amqp``` folder.
 
 ```
 $ cd containers/app/amqp
-$ mkdir socket
+$ mkdir sockets
 ```
 
-Create a file named ```trackerSocket.js```inside the ```socket``` directory.
+Create a file named ```trackerSocket.js```inside the ```sockets``` directory.
 
 ```
-$ cd containers/app/amqp/socket
+$ cd containers/app/amqp/sockets
 $ touch trackerSocket.js
 ```
 
@@ -91,7 +91,16 @@ io.on("connection", (socket) => {
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
 ```
-containers/app/amqp/trackerSocket.js
+containers/app/amqp/sockets/trackerSocket.js
+
+Now in a separate terminal, run below command.
+
+```
+$ cd containers/app/amqp
+$ nodemon ./sockets/trackerSocket --exec babel-node -e js
+```
+
+If you see the messages ```Listening on port 8001``` and ```Connected to database``` output of the command, it means the command is running successfully.
 
 
 
