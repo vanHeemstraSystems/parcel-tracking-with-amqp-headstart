@@ -7,6 +7,8 @@ Based on "Dockerizing a React App" at https://mherman.org/blog/dockerizing-a-rea
 
 Original source: https://github.com/ardaorkin/rabbitmq-parcel-tracking
 
+This a companion repository of [Parcel Tracking Client - Headstart](https://github.com/vanHeemstraSystems/parcel-tracking-client-headstart).
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
