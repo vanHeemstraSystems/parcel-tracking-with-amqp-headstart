@@ -6,7 +6,7 @@ First update the ```sample.env``` file with this new entry.
 
 ```
 ...
-WEBSOCKET_PORT="8001"
+SOCKET_PORT="8001"
 ...
 ```
 containers/app/amqp/sample.env
@@ -44,7 +44,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const port = process.env.WEBSOCKET_PORT || 8001;
+const port = process.env.SOCKET_PORT || 8001;
 
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
