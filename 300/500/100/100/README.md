@@ -149,6 +149,31 @@ $ sudo npm install nodemon -g
 $ npm install @babel/node -g
 ```
 
+If it is mentioned that there is already a process listening at port 8000, find the Process ID (PID) as follows:
+
+You can try netstat
+```
+$ netstat -vanp tcp | grep 8000
+``` 
+
+For **macOS El Capitan and newer** (or if your netstat doesn't support -p), use lsof
+
+```
+$ lsof -i tcp:8000 
+``` 
+ 
+For **Centos 7** use:
+
+```
+$ netstat -vanp --tcp | grep 8000
+```
+
+If it returns the Process ID (PID) at which an earlier process is listening, you can kill that process as follows:
+
+```
+$ kill -9 <PID>
+```
+
 After above execution open ```localhost:8000``` in a browser. If the "Welcome to AMQP Service" message comes up on the page it means Express.js installation was successful.
 
 ![Screenshot 2021-10-25 at 10 54 43](https://user-images.githubusercontent.com/1499433/138665819-59233cc8-65bd-489f-8a31-da4667fb11d2.png)
