@@ -74,12 +74,18 @@ CMD ["npm", "start"]
 ```
 containers/app/amqp/Dockerfile.prod
 
-Using the production docker-compose file, build and tag the Docker image and run the Docker container:
+Using the production docker-compose file, build and tag the Docker image, and run the container specifying its name as "parcel-tracking-prod" to distinguish it from possible other stacks that are called "app" (the default name, based on the root directory):
 
 ```
 $ cd containers/app
-$ docker-compose --file docker-compose.prod.yml up --build -d
+$ docker-compose --file docker-compose.prod.yml --project-name parcel-tracking-prod up --build -d
 ```
+
+**Note**:   
+```
+-p, --project-name NAME     Specify an alternate project name
+                              (default: directory name)
+``` 
 
 If successful, browse to http://localhost:8000 to see the production version of the app.
 
