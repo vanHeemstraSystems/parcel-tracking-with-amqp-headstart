@@ -105,12 +105,18 @@ service:
 ```
 containers/app/sample.docker-compose.dev.yml
 
-Now it is time to build the development Docker Image and run the development Docker Container for our app, now including the ```amqp``` service.
+Now it is time to build the development Docker Image, and run the container specifying its name as "parcel-tracking-dev" to distinguish it from possible other stacks that are called "app" (the default name, based on the root directory), now including the ```amqp``` service.
 
 ```
 $ cd containers/app
-$ docker-compose --file docker-compose.dev.yml up --build -d
+$ docker-compose --file docker-compose.dev.yml --project-name parcel-tracking-dev up --build -d
 ```
+
+**Note**:   
+```
+-p, --project-name NAME     Specify an alternate project name
+                              (default: directory name)
+``` 
 
 Fingers crossed ... !
 
